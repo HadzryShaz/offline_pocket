@@ -1,0 +1,287 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0B2447;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.user-list {
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+tr {
+	background-color: #f2f2f2;
+}
+
+
+th {
+     background-color: black;
+  color:white;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+
+/*-----------------Top Navigation Bar---------------*/
+.navs {
+  display: flex;
+  padding: 2% 6% ;
+  justify-content: left;
+  align-items: center;
+  position: fixed;
+  margin-left: 0;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  background-image: linear-gradient(black,black, grey);
+  z-index: 5;
+  height:10%;
+}
+
+@media screen and (max-width: 768px) {
+	.nav-links {	
+		display:none;		
+	}
+}
+
+.logo a{
+  list-style-type: none;
+  color: white;
+  padding: 14px 16px;
+  font-size: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Allerta Stencil', sans-serif;	
+  left:0;
+
+}
+
+.moto{
+   list-style-type: none;
+  color: white;
+  padding: 5px 5px;
+  font-size: 12px;
+  text-decoration: none;
+  font-family: 'Allerta Stencil', sans-serif;	
+  left:0;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style-type: none;
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+   text-align: center;
+}
+
+.nav-links ul li a {
+  display: inline-block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.nav-links ul li a:hover:not(.active) {
+  background-color: white;
+  color: red;
+}
+
+.active {
+  background-color: #04aa6d;
+}
+
+/*-----------------Side Navigation Bar---------------*/
+.sidenav {
+  height: 1000px;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  background-image: linear-gradient(black,black, grey);
+  overflow-x: hidden;
+  transition: 1s ease;
+  padding-top: 60px;
+  z-index: 50;
+}
+
+.sidenav a {
+  padding: 8px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: white;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: red;
+  z-index:4;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/*-----------------Search Bar---------------*/
+input[type=text] {
+  width: 400px;
+  height:35px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: white;
+  color:black;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 5px 6px 6px 10px;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  text-align:left;
+}
+
+.saja input[type=text]{
+  width: 120px;
+  height:35px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 5px 6px 6px 10px;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  text-align:left;
+}
+
+.nav-links ul li form input[type=text]{
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: black;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  text-align:right;
+}
+
+.nav-links ul li form input[type=text]:focus {
+  width: 90%;
+   background-color: white;
+   border: 2px solid black;
+}
+
+
+
+.btn-delete {
+	width: 100%;
+	height: 35px;
+	background: red;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1em;
+	color: black;
+	font-weight: 500;
+	margin-top:5px;
+	
+}
+.btn-delete:hover{
+	color:  white;
+}
+
+.btn-edit {
+	width: 100%;
+	height: 35px;
+	background: green;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1em;
+	color: black;
+	font-weight: 500;
+	margin-top:5px;
+	
+}
+.btn-edit:hover{
+	color:  white;
+}
+

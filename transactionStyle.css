@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color 0.5s;
+  background-image:url(pocketImage/mobile/map.jpg);
+  background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+  
+body.sidenav-open {
+  overflow: hidden;
+  position: fixed;
+}
+
+
+.home{
+	padding:20px;
+	margin-top:30px;
+	
+}
+
+.middle-content{
+	display:flex;
+}
+
+.left-part-stick{
+	position:fixed;
+	width:25%;
+	z-index:0;
+	overflow:hidden;
+	
+	
+	
+}
+
+.left-part{
+	width:25%;
+	margin-top:60px;
+	margin-bottom:20px;
+	margin-left:20px;
+	margin-right:-10px;
+	border-radius:20px;
+	z-index:-1;
+	overflow:hidden;
+	
+}
+
+.right-part{
+	width:75%;
+	flex-grow:1;
+	margin-right:10px;
+	margin-top:50px;
+	margin-bottom:20px;
+	margin-left:25px;
+	padding: 30px 30px 30px 30px;
+	
+	
+}
+
+.middle-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.mobile-section{
+	width:100%;
+	background: rgba(210, 210, 210, 0.3);
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:20px;
+	margin-left:0px;
+	border-radius:20px;	
+	
+	
+}
+
+.pc-section{
+	width:100%;
+	background: rgba(210, 210, 210, 0.3);
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:20px;
+	margin-left:0px;
+	border-radius:20px;	
+	
+	
+}
+
+.console-section{
+	width:100%;
+	background: rgba(210, 210, 210, 0.3);
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:20px;
+	margin-left:0px;
+	border-radius:20px;	
+	
+	
+}
+
+.adv-section{
+	width:100%;
+	background: rgba(210, 210, 210, 0.3);
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:20px;
+	margin-left:0px;
+	border-radius:20px;
+	
+}
+
+.counter-section{
+	width:100%;
+	background: rgba(210, 210, 210, 0.3);
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:20px;
+	margin-left:0px;
+	border-radius:20px;
+	
+		
+}
+
+.bottom-content{
+	width:98%;
+	height:500px;
+	background: rgba(210, 210, 210, 0.3);
+	margin-right:10px;
+	margin-top:10px;
+	margin-bottom:20px;
+	margin-left:10px;
+	border-radius:20px;	
+	z-index: 15;
+	background-color:black;
+	
+	
+	
+	
+}
+
+/*-----------------Top Navigation Bar---------------*/
+.navs {
+  display: flex;
+  padding: 2% 6% ;
+  justify-content: left;
+  align-items: center;
+  position: fixed;
+  margin-left: 0;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  background-image: linear-gradient(black,black, grey);
+  z-index: 5;
+  height:10%;
+}
+
+@media screen and (max-width: 768px) {
+	.nav-links {	
+		display:none;		
+	}
+}
+
+.logo a{
+  list-style-type: none;
+  color: white;
+  padding: 14px 16px;
+  font-size: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Allerta Stencil', sans-serif;	
+  left:0;
+
+}
+
+.moto{
+   list-style-type: none;
+  color: white;
+  padding: 5px 5px;
+  font-size: 12px;
+  text-decoration: none;
+  font-family: 'Allerta Stencil', sans-serif;	
+  left:0;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style-type: none;
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+   text-align: center;
+}
+
+.nav-links ul li a {
+  display: inline-block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.nav-links ul li a:hover:not(.active) {
+  background-color: white;
+  color: red;
+}
+
+.active {
+  background-color: #04aa6d;
+}
+
+/*-----------------Side Navigation Bar---------------*/
+.sidenav {
+  height: 1000px;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  background-image: linear-gradient(black,black, grey);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 50;
+}
+
+.sidenav a {
+  padding: 8px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: white;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: red;
+  z-index:4;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/*-----------------Search Bar---------------*/
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: black;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  text-align:right;
+}
+
+input[type=text]:focus {
+  width: 90%;
+   background-color: white;
+   border: 2px solid black;
+}
+
+
+.long-text {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    width: 20%;
+    color: white;
+	text-align: justify;
+}
+
+/*-----------------Transaction---------------*/
+.transaction{
+	margin-top:80px;
+	margin-left:50px;
+	margin-right:50px;
+	padding-left:50px;
+	padding-right: 50px;
+	
+}
+
+.id-group{
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	border-radius: 10px;
+
+}
+
+.centered-input {
+    display: flex;
+    justify-content: center;
+}
+
+#userId:focus {
+  width: 25%;
+   background-color: white;
+   border: 2px solid black;
+   text-align: center;
+}
+
+/*-------------------Diamond Selction--------------*/
+
+.diamond-options {
+	
+	text-align:center;
+	background-color: transparent;
+	border-radius: 10px;
+}
+.diamond-option.highlighted {
+    background-color: transparent;
+    border: 2px solid black;
+    box-sizing: border-box;
+    width: fit-content;
+    padding: 12px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*-------------------Payment Selction--------------*/
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	
+}
+
+.payment-option {
+    margin: 10px;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.payment-option:hover {
+    transform: scale(1.1);
+}
+
+
+.form-group{
+	text-align:center;
+	background-color: transparent;
+	border-radius: 10px;
+}
+
+#bankSelection{
+	text-align:center;
+	background-color: transparent;
+	border-radius: 10px;
+}
+
+.highlighted {
+    background-color: grey; 
+    border-radius: 50%; 
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5); 
+}
+
+
+.bank{
+		display:block;
+}
+
+
+.option1{
+	text-decoration: none;
+}
+
+.option2{
+	text-decoration: none;
+}
+
+.option3{
+	text-decoration: none;
+}
+
+.option4{
+	text-decoration: none;
+}
+
+.option5{
+	text-decoration: none;
+}
+

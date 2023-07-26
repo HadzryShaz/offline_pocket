@@ -1,0 +1,100 @@
+<!-- Product Details -->
+				<?php
+				// Check if the product ID is provided
+				if (isset($_GET['id'])) {
+					$productID = $_GET['id'];
+
+					// Retrieve product details from the database
+					$hostname = "localhost";
+					$username = "root";
+					$password = "";
+					$dbname = "Offline_Pocket";
+
+					$connect = mysqli_connect($hostname, $username, $password, $dbname) OR DIE("Connection failed.");
+
+					$sql = "SELECT * FROM gameData WHERE id = $productID";
+					$result = mysqli_query($connect, $sql);
+
+					if (mysqli_num_rows($result) > 0) {
+						$row = mysqli_fetch_assoc($result);
+
+						// Display the product details
+						echo '<div class="product-details">';
+						echo '<img src="' . $row['gameImage'] . '" alt="Game Image">';
+						echo '<h2>Game Name: ' . $row['gameName'] . '</h2>';
+						echo '<p>Game Type: ' . $row['gameType'] . '</p>';
+						echo '<form action="transaction_process.php" method="post">';
+						echo '<div class="form-group">';
+						echo '<label for="user_id">User ID:</label>';
+						echo '<input type="text" name="user_id" id="user_id" required>';
+						echo '</div>';
+						echo '<div class="form-group">';
+						echo '<label for="user_server">User Server:</label>';
+						echo '<input type="text" name="user_server" id="user_server" required>';
+						echo '</div>';
+						echo '<div class="currency-info">';
+						echo '<div class="currency-label">Choose Ingame Currency:</div>';
+						echo '<div class="saja">';
+						
+						echo '<div class="saja-btn">';
+						echo '<input type="button" class="currency-btn" value="' . $row['nameIngameCurrency'] . ' ' . $row['ingameCurrency1'] . '<br> RM ' . $row['realCurrency1'] . '" onclick="setPrice(\'' . $row['realCurrency1'] . '\')">';
+						echo '</div>';
+						
+						echo '<div class="saja-btn">';
+						echo '<input type="button" class="currency-btn" value="' . $row['nameIngameCurrency'] . ' ' . $row['ingameCurrency2'] . '<br> RM ' . $row['realCurrency2'] . '" onclick="setPrice(\'' . $row['realCurrency2'] . '\')">';
+						echo '</div>';
+						
+						echo '<div class="saja-btn">';
+						echo '<input type="button" class="currency-btn" value="' . $row['nameIngameCurrency'] . ' ' . $row['ingameCurrency3'] . '<br> RM ' . $row['realCurrency3'] . '" onclick="setPrice(\'' . $row['realCurrency3'] . '\')">';
+						echo '</div>';
+						
+						echo '<div class="saja-btn">';
+						echo '<input type="button" class="currency-btn" value="' . $row['nameIngameCurrency'] . ' ' . $row['ingameCurrency4'] . '<br> RM ' . $row['realCurrency4'] . '" onclick="setPrice(\'' . $row['realCurrency4'] . '\')">';
+						echo '</div>';
+						
+						echo '<div class="saja-btn">';
+						echo '<input type="button" class="currency-btn" value="' . $row['nameIngameCurrency'] . ' ' . $row['ingameCurrency5'] . '<br> RM ' . $row['realCurrency5'] . '" onclick="setPrice(\'' . $row['realCurrency5'] . '\')">';
+						echo '</div>';
+						
+						echo '</div>';
+						echo '<input type="hidden" name="charge" id="charge" >';
+						echo '</div>';
+						echo '<div class="payment-info">';
+						echo '<label for="payment_type">Choose Payment Type:</label>';
+						echo '<select name="payment_type" id="payment_type" required>';
+						echo '<option value="credit_card">Credit Card</option>';
+						echo '<option value="paypal">PayPal</option>';
+						echo '<option value="bitcoin">Bitcoin</option>';
+						echo '</select>';
+						echo '</div>';
+						echo '<button type="submit" class="btn-submit">Submit Transaction</button>';
+						echo '</form>';
+						echo '</div>';
+					} else {
+						echo "<p>Product not found.</p>";
+					}
+
+					// Close the database connection
+					mysqli_close($connect);
+				} else {
+					echo "<p>Product ID not provided.</p>";
+				}
+				?>
+
+
+
+<script>
+function setPrice(price) {
+    // Assuming you have an input field with the id 'price_input'
+    var priceInput = document.getElementById('charge');
+    priceInput.value = price;
+
+    // If you want to do something else with the selected price, you can add your logic here
+    var buttons = document.getElementsByClassName('currency-btn');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('selected');
+    }
+
+    event.target.classList.add('selected');
+}
+</script>
